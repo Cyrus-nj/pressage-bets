@@ -1,5 +1,5 @@
 [package]
-name = "prediction_market"
+name = "pressage_bets"
 version = "0.1.0"
 
 [[target.starknet-contract]]
