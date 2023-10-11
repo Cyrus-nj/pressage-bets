@@ -1,3 +1,4 @@
+//betting oracle
 #[contract]
 mod Oracle {
 
