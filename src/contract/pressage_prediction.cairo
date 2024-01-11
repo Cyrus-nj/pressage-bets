@@ -15,7 +15,7 @@ struct Prediction {
     candidate: felt252,
     redeemed: felt252,
 }
-
+ #[abi(embed_v0)]
 impl PredicitinStorageAccess of StorageAccess::<Prediction> {
     fn read(address_domain: u32, base: StorageBaseAddress) -> SyscallResult::<Prediction> {
         Result::Ok(
@@ -96,7 +96,7 @@ mod Presage {
     }
 
      #[generate_trait]
-    #[external(v0)]
+     #[abi(embed_v0)]
     impl Pressage of IPressage{
     fn makePrediction(_predictionID: felt252, _candidate: felt252, _amount: u256) {
         let caller = get_caller_address();
@@ -135,7 +135,7 @@ mod Presage {
         NewPredictionMarket(_predictionID, caller, _amount, _candidate) 
     }
 
-    #[external]
+   
     fn redeemRewards(_predictionID: felt252)  {
         // get the winner and stored predictions
         let p = predictions::read(_predictionID);
@@ -169,7 +169,7 @@ mod Presage {
         predictions::write(_predictionID, newP);
     }
 
-    #[external]
+   
     fn withdrawTokens()  {
         // get the user balances  
         let caller = get_caller_address();
