@@ -1,1 +1,2 @@
-# betting contract
+# betting contract in cairo
+
